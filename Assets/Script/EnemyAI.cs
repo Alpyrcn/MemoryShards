@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class EnemyAI : MonoBehaviour
 {
+
+    public EnemyData enemyData;
+
     public float speed;
     public float checkRadius;
     public float attackRadius;
@@ -11,6 +14,8 @@ public class EnemyAI : MonoBehaviour
     public bool shouldRotate;
 
     public LayerMask whatIsPlayer;
+
+    private HealthSystem healthSystem;
 
     private Transform target;
     private Rigidbody2D rb;
@@ -55,5 +60,10 @@ public class EnemyAI : MonoBehaviour
     private void MoveCharacter(Vector2 dir)
     {
         rb.MovePosition((Vector2)transform.position + (dir * speed * Time.deltaTime));
+    }
+
+    public void Die()
+    {
+        Destroy(gameObject);
     }
 }
