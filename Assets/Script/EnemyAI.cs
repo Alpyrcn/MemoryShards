@@ -4,35 +4,34 @@ using UnityEngine;
 
 public class EnemyAI : MonoBehaviour
 {
-
     public EnemyData enemyData;
 
-    public float speed;
     public float checkRadius;
     public float attackRadius;
-
     public bool shouldRotate;
-
     public LayerMask whatIsPlayer;
 
     private HealthSystem healthSystem;
-
     private Transform target;
     private Rigidbody2D rb;
     private Animator anim;
-    private Vector2 movement;
-    public Vector3 dir;
 
-    public bool isInChaseRange;
-    public bool isInAttackRange;
+    private Vector2 movement;
+    private Vector3 dir;
+
+    private bool isInChaseRange;
+    private bool isInAttackRange;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         target = GameObject.FindWithTag("Player").transform;
+        gameObject.tag = "Player";
+
+        // HealthSystem sýnýfýndan yeni bir instance oluþturarak düþmanýn saðlýðýný set ediyoruz.
+        healthSystem = new HealthSystem(enemyData.health);
     }
 
-    // Update is called once per frame
     void Update()
     {
         isInChaseRange = Physics2D.OverlapCircle(transform.position, checkRadius, whatIsPlayer);
@@ -43,11 +42,16 @@ public class EnemyAI : MonoBehaviour
         dir.Normalize();
         movement = dir;
 
+        // Düþmanýn saðlýðý %0'a düþtüðünde, Die() metodu çaðrýlýr.
+        if (healthSystem.GetHealth() <= 0)
+        {
+            Die();
+        }
     }
 
     private void FixedUpdate()
     {
-        if(isInChaseRange && !isInAttackRange)
+        if (isInChaseRange && !isInAttackRange)
         {
             MoveCharacter(movement);
         }
@@ -59,11 +63,12 @@ public class EnemyAI : MonoBehaviour
 
     private void MoveCharacter(Vector2 dir)
     {
-        rb.MovePosition((Vector2)transform.position + (dir * speed * Time.deltaTime));
+        rb.MovePosition((Vector2)transform.position + (dir * enemyData.speed * Time.deltaTime));
     }
 
-    public void Die()
+    private void Die()
     {
+        // Burada düþmanýn ölüm animasyonu oynatýlabilir veya düþman objesi yok edilebilir.
         Destroy(gameObject);
     }
 }
