@@ -4,77 +4,70 @@ using UnityEngine;
 
 public class PlayerController2D : MonoBehaviour
 {
+
     public Rigidbody2D rb;
     private Animator animator;
-    private float MoveSpeed = 4f;
 
-    private bool isDashing;
+    private float MoveSpeed = 10f;
 
-    private Vector3 moveDirection;
+    private bool isdashing;
     
-    private float dashDuration = 0.2f;
-    private float dashSpeed = 10f;
-    private float dashCooldown = 1f;
-    private float lastDashTime = -10f;
-
-    private void Start()
+    private Vector3 movedirection;
+    private void Awake()
     {
-        animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
     }
 
-    private void Update()
+    // Update is called once per frame
+    void Update()
     {
-        Vector2 dir = Vector2.zero;
+        float moveX = 0f;
+        float moveY = 0f;
 
-        if (Input.GetKey(KeyCode.A))
-        {
-            dir.x = -1;
-            animator.SetInteger("Direction", 3);
-        }
-        else if (Input.GetKey(KeyCode.D))
-        {
-            dir.x = 1;
-            animator.SetInteger("Direction", 2);
-        }
         if (Input.GetKey(KeyCode.W))
         {
-            dir.y = 1;
-            animator.SetInteger("Direction", 1);
+            moveY = +1f;
+          
         }
-        else if (Input.GetKey(KeyCode.S))
+        if (Input.GetKey(KeyCode.S))
         {
-            dir.y = -1;
-            animator.SetInteger("Direction", 0);
+            moveY = -1f;
+            
+        }
+        if (Input.GetKey(KeyCode.A))
+        {
+            moveX = -1f;
+            
+        }
+        if (Input.GetKey(KeyCode.D))
+        {
+            moveX = +1f;
+            
         }
 
-        dir.Normalize();
-        animator.SetBool("IsMoving", dir.magnitude > 0);
+        movedirection = new Vector3(moveX, moveY).normalized;
 
-        if (!isDashing)
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            rb.velocity = MoveSpeed * dir;
-        }
-
-        if (Input.GetKeyDown(KeyCode.LeftShift) && Time.time - lastDashTime > dashCooldown)
-        {
-            isDashing = true;
-            moveDirection = dir;
-            StartCoroutine(Dash(dashDuration));
-            lastDashTime = Time.time;
-            animator.SetInteger("Direction", 4);
+            isdashing = true;
         }
     }
 
-    IEnumerator Dash(float duration)
+    private void FixedUpdate()
     {
-        float time = 0;
-        while (time < duration)
+        rb.velocity = movedirection * MoveSpeed;
+
+        if (isdashing)
         {
-            time += Time.deltaTime;
-            rb.velocity = moveDirection * dashSpeed;
-            yield return null;
+            float dashAmount = 4f;
+            Vector3 dashPosition = transform.position + movedirection * dashAmount;
+            RaycastHit2D raycastHit2D = Physics2D.Raycast(transform.position, movedirection, dashAmount);
+            if (raycastHit2D.collider != null)
+            {
+                dashPosition = raycastHit2D.point;
+            }
+            rb.MovePosition(transform.position + movedirection * dashAmount);
+            isdashing = false;
         }
-        isDashing = false;
     }
 }
