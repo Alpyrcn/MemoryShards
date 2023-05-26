@@ -11,6 +11,7 @@ public class EnemyAI : MonoBehaviour
     public bool shouldRotate;
     public LayerMask whatIsPlayer;
 
+    private PlayerHealth playerHealth;
     private HealthSystem healthSystem;
     private Transform target;
     private Rigidbody2D rb;
@@ -26,9 +27,10 @@ public class EnemyAI : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         target = GameObject.FindWithTag("Player").transform;
-        gameObject.tag = "Player";
+        gameObject.tag = "Enemy";
 
         // HealthSystem sýnýfýndan yeni bir instance oluþturarak düþmanýn saðlýðýný set ediyoruz.
+        playerHealth = FindObjectOfType<PlayerHealth>();
         healthSystem = new HealthSystem(enemyData.health);
     }
 
@@ -49,6 +51,7 @@ public class EnemyAI : MonoBehaviour
         }
     }
 
+
     private void FixedUpdate()
     {
         if (isInChaseRange && !isInAttackRange)
@@ -58,6 +61,7 @@ public class EnemyAI : MonoBehaviour
         if (isInAttackRange)
         {
             rb.velocity = Vector2.zero;
+            
         }
     }
 
@@ -66,9 +70,27 @@ public class EnemyAI : MonoBehaviour
         rb.MovePosition((Vector2)transform.position + (dir * enemyData.speed * Time.deltaTime));
     }
 
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            Attack();
+        }
+    }
+    public void Attack()
+    {
+        if (playerHealth != null)
+        {
+            playerHealth.TakeDamage(enemyData.damage);
+        }
+    }
     private void Die()
     {
-        // Burada düþmanýn ölüm animasyonu oynatýlabilir veya düþman objesi yok edilebilir.
-        Destroy(gameObject);
+        // Ölüm iþlemleri burada gerçekleþtirilir.
+        // Örneðin, animasyon oynatýlabilir veya ses çalýnabilir.
+        // Düþman nesnesi deðiþtirilebilir veya yok edilebilir.
+
+        Destroy(gameObject); // Düþman nesnesini yok etme örneði
     }
 }

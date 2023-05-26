@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class PlayerController2D : MonoBehaviour
 {
+
+    public InventorySO inventory;
     public Rigidbody2D rb;
+
     private Animator animator;
-    private float MoveSpeed = 4f;
+    private float MoveSpeed = 5f;
 
     private bool isDashing;
 
@@ -14,7 +17,7 @@ public class PlayerController2D : MonoBehaviour
     
     private float dashDuration = 0.2f;
     private float dashSpeed = 10f;
-    private float dashCooldown = 1f;
+    private float dashCooldown = 2f;
     private float lastDashTime = -10f;
 
     private void Start()
@@ -45,11 +48,15 @@ public class PlayerController2D : MonoBehaviour
         else if (Input.GetKey(KeyCode.S))
         {
             dir.y = -1;
-            animator.SetInteger("Direction", 0);
         }
+
+
+
+
 
         dir.Normalize();
         animator.SetBool("IsMoving", dir.magnitude > 0);
+
 
         if (!isDashing)
         {
@@ -58,11 +65,12 @@ public class PlayerController2D : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.LeftShift) && Time.time - lastDashTime > dashCooldown)
         {
+
+            animator.SetBool("IsDashing", true);
             isDashing = true;
             moveDirection = dir;
             StartCoroutine(Dash(dashDuration));
             lastDashTime = Time.time;
-            animator.SetInteger("Direction", 4);
         }
     }
 

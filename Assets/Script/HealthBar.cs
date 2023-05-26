@@ -1,35 +1,24 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class HealthBar : MonoBehaviour
 {
-    private HealthSystem healthSystem;
-
     public Slider slider;
+    public PlayerHealth playerHealth;
 
     private void Start()
     {
-        healthSystem = new HealthSystem(20);
-        slider.maxValue = 20;
-        healthbar();
+        slider.maxValue = playerHealth.maxHealth;
+        
     }
 
-    public void healthbar()
+    public void UpdateHealthBar()
     {
-        slider.value = healthSystem.GetHealth();
+        slider.value = playerHealth.GetCurrentHealth();
     }
 
-    void Update()
+    private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            healthSystem.Damage(5);
-            healthbar();
-
-            
-        }
-
+        UpdateHealthBar();
     }
 }

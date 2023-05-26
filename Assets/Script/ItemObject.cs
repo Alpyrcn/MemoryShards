@@ -6,8 +6,8 @@ public enum ItemType
 {
     Weapons,
     Items,
-    Consumable
-
+    Consumable,
+    Material
 }
 
 public abstract class ItemObject : ScriptableObject

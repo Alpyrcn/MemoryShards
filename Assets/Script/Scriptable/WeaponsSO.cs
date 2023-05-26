@@ -12,4 +12,19 @@ public class WeaponsSO : ItemObject
     {
         type = ItemType.Weapons;
     }
+
+    public void DecreaseDurability(float amount)
+    {
+        durability -= amount;
+
+        if (durability <= 0)
+        {
+            Break();
+        }
+    }
+
+    private void Break()
+    {
+        
+    }
 }
