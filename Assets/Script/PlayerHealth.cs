@@ -5,7 +5,9 @@ public class PlayerHealth : MonoBehaviour
     public int maxHealth = 100;
     private int currentHealth;
 
+    private Animator anim;
 
+    [SerializeField] private AudioSource deathSound;
     public int GetCurrentHealth()
     {
         return currentHealth;
@@ -32,10 +34,14 @@ public class PlayerHealth : MonoBehaviour
 
     private void Die()
     {
+        deathSound.Play();
+
+        
+
         // Ölüm iþlemleri burada gerçekleþtirilir.
         // Örneðin, oyunu yeniden baþlatabilir veya oyunu durdurabilirsiniz.
 
-        Destroy(gameObject);
+        
     }
 
     private void Update()
@@ -44,6 +50,7 @@ public class PlayerHealth : MonoBehaviour
         {
             TakeDamage(5);
         }
+
     }
 }
 

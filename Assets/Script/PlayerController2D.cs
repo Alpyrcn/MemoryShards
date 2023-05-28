@@ -65,12 +65,13 @@ public class PlayerController2D : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.LeftShift) && Time.time - lastDashTime > dashCooldown)
         {
-
+            
             animator.SetBool("IsDashing", true);
             isDashing = true;
             moveDirection = dir;
             StartCoroutine(Dash(dashDuration));
             lastDashTime = Time.time;
+            AudioManager.Instance.PlaySFX("Dashing");
         }
     }
 
