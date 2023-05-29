@@ -68,6 +68,8 @@ public class EnemyAI : MonoBehaviour
     private void MoveCharacter(Vector2 dir)
     {
         rb.MovePosition((Vector2)transform.position + (dir * enemyData.speed * Time.deltaTime));
+
+        anim.SetBool("Moving", true);
     }
 
 

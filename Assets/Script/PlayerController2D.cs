@@ -51,11 +51,16 @@ public class PlayerController2D : MonoBehaviour
         }
 
 
-
+        if (!Input.anyKey)
+        {
+            animator.SetInteger("Direction", 0);
+        }
 
 
         dir.Normalize();
         animator.SetBool("IsMoving", dir.magnitude > 0);
+
+
 
 
         if (!isDashing)
@@ -66,7 +71,7 @@ public class PlayerController2D : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.LeftShift) && Time.time - lastDashTime > dashCooldown)
         {
             
-            animator.SetBool("IsDashing", true);
+            
             isDashing = true;
             moveDirection = dir;
             StartCoroutine(Dash(dashDuration));
@@ -77,13 +82,21 @@ public class PlayerController2D : MonoBehaviour
 
     IEnumerator Dash(float duration)
     {
+
+
         float time = 0;
+        animator.SetBool("IsDashing", true);
         while (time < duration)
         {
+            
             time += Time.deltaTime;
             rb.velocity = moveDirection * dashSpeed;
             yield return null;
         }
+
+
+        animator.SetBool("IsDashing", false);
+
         isDashing = false;
     }
 }
