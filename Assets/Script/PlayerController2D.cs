@@ -5,7 +5,6 @@ using UnityEngine;
 public class PlayerController2D : MonoBehaviour
 {
 
-    public InventorySO inventory;
     public Rigidbody2D rb;
 
     private Animator animator;
@@ -62,6 +61,12 @@ public class PlayerController2D : MonoBehaviour
 
 
 
+        if (Input.GetMouseButtonDown(0))
+        {
+            Attack();
+        }
+
+
 
         if (!isDashing)
         {
@@ -85,18 +90,25 @@ public class PlayerController2D : MonoBehaviour
 
 
         float time = 0;
-        animator.SetBool("IsDashing", true);
+        
         while (time < duration)
         {
             
             time += Time.deltaTime;
+            animator.SetTrigger("Rolling");
             rb.velocity = moveDirection * dashSpeed;
             yield return null;
         }
 
 
-        animator.SetBool("IsDashing", false);
+        
 
         isDashing = false;
+    }
+
+
+    public void Attack()
+    {
+        animator.SetTrigger("IsAttacking");
     }
 }

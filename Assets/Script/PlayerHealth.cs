@@ -34,14 +34,13 @@ public class PlayerHealth : MonoBehaviour
 
     private void Die()
     {
-        deathSound.Play();
+        AudioManager.Instance.PlaySFX("Death");
 
-        
 
         // Ölüm iþlemleri burada gerçekleþtirilir.
         // Örneðin, oyunu yeniden baþlatabilir veya oyunu durdurabilirsiniz.
 
-        
+
     }
 
     private void Update()
