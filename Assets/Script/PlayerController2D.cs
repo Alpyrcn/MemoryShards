@@ -47,6 +47,7 @@ public class PlayerController2D : MonoBehaviour
         else if (Input.GetKey(KeyCode.S))
         {
             dir.y = -1;
+            animator.SetInteger("Direction", 4);
         }
 
 

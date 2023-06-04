@@ -11,7 +11,7 @@ public class RoomSpawner : MonoBehaviour
     private bool spawned = false;
     private void Start()
     {
-        roomPrefab = GameObject.FindGameObjectWithTag("Rooms").GetComponent<RoomPrefabs>();
+        roomPrefab = GameObject.FindGameObjectWithTag("RoomSpawn").GetComponent<RoomPrefabs>();
         Invoke("Spawn", 0.1f);
     }
 
