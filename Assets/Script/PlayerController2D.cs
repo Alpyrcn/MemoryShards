@@ -8,7 +8,7 @@ public class PlayerController2D : MonoBehaviour
     public Rigidbody2D rb;
 
     private Animator animator;
-    private float MoveSpeed = 5f;
+    private float MoveSpeed = 6f;
 
     private bool isDashing;
 
