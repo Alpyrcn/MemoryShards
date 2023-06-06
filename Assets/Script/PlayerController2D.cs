@@ -112,4 +112,12 @@ public class PlayerController2D : MonoBehaviour
     {
         animator.SetTrigger("IsAttacking");
     }
+
+    public WeaponsSO weapon;
+
+    public void AttackEnemy(EnemyData enemy)
+    {
+        animator.SetTrigger("IsAttacking");
+        weapon.DealDamage(enemy);
+    }
 }

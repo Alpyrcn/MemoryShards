@@ -9,17 +9,29 @@ public class RoomSpawner : MonoBehaviour
     private RoomPrefabs roomPrefab;
     private int rand;
     private bool spawned = false;
+
+    public float waitTime = 4f;
     private void Start()
     {
+        Destroy(gameObject, waitTime);
         roomPrefab = GameObject.FindGameObjectWithTag("RoomSpawn").GetComponent<RoomPrefabs>();
         Invoke("Spawn", 0.1f);
     }
 
+
     void Spawn()
     {
+
         if(spawned == false)
         {
-            if (openingDirection == 1)
+            if (openingDirection == 0)
+            {
+                rand = Random.Range(0, roomPrefab.EntryRooms.Length);
+                Instantiate(roomPrefab.EntryRooms[rand], transform.position, roomPrefab.EntryRooms[rand].transform.rotation);
+
+            }
+
+            else if (openingDirection == 1)
             {
                 rand = Random.Range(0, roomPrefab.bottomRooms.Length);
                 Instantiate(roomPrefab.bottomRooms[rand], transform.position, roomPrefab.bottomRooms[rand].transform.rotation);
@@ -47,9 +59,14 @@ public class RoomSpawner : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.CompareTag("SpawnPoint") && other.GetComponent<RoomSpawner>().spawned == true)
+        if(other.CompareTag("SpawnPoint"))
         {
-            Destroy(gameObject);
+            if(other.GetComponent<RoomSpawner>().spawned == false && spawned == false)
+            {
+                Instantiate(roomPrefab.closedRoom, transform.position, Quaternion.identity);
+                Destroy(gameObject);
+            }
+            spawned = true;
         }
     }
 }
