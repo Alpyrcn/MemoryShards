@@ -772,8 +772,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7855758236302490847, guid: 028caf81e8d08fe49b8ec9eb84da4211,
         type: 3}
+      propertyPath: sfxSound.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7855758236302490847, guid: 028caf81e8d08fe49b8ec9eb84da4211,
+        type: 3}
+      propertyPath: sfxSound.Array.data[1].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: d1402e8a11380fa40a8db9ffb04ec36a, type: 3}
+    - target: {fileID: 7855758236302490847, guid: 028caf81e8d08fe49b8ec9eb84da4211,
+        type: 3}
+      propertyPath: sfxSound.Array.data[2].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: d95c4e30aaaded144bde017bffc56b7f, type: 3}
+    - target: {fileID: 7855758236302490847, guid: 028caf81e8d08fe49b8ec9eb84da4211,
+        type: 3}
       propertyPath: sfxSound.Array.data[1].sfxname
       value: Dashing
+      objectReference: {fileID: 0}
+    - target: {fileID: 7855758236302490847, guid: 028caf81e8d08fe49b8ec9eb84da4211,
+        type: 3}
+      propertyPath: sfxSound.Array.data[2].sfxname
+      value: SwordSwing
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 028caf81e8d08fe49b8ec9eb84da4211, type: 3}
@@ -821,22 +841,21 @@ MonoBehaviour:
   bottomRooms:
   - {fileID: 2031813281866764484, guid: c47a2708b86cfb04dbbbc2a8f66537c1, type: 3}
   topRooms:
-  - {fileID: 5814115363612113446, guid: 374d22787bbc7a64685e7389dc64836a, type: 3}
   - {fileID: 945814947500427048, guid: 8296e71af0638474facd0980809d3c05, type: 3}
+  - {fileID: 7488908209587040436, guid: 999360674f9a2fa45b546a4a61ade29d, type: 3}
+  - {fileID: 5814115363612113446, guid: 374d22787bbc7a64685e7389dc64836a, type: 3}
   leftRooms:
   - {fileID: 6358688531144410195, guid: 210fc0e1faf0abf44abfaf47d67e6182, type: 3}
   - {fileID: 8303347670875050435, guid: 9091566ff877d7444bb075fc76ac0655, type: 3}
   rightRooms:
-  - {fileID: 4312293007479344065, guid: 26126658597f1f446b49ac0af1d748a8, type: 3}
   - {fileID: 2175973300865532386, guid: 03ba380b4823b194d9d256d88a9110ca, type: 3}
+  - {fileID: 4312293007479344065, guid: 26126658597f1f446b49ac0af1d748a8, type: 3}
   EntryRooms:
   - {fileID: 2614610302961168961, guid: 03dafcd09da48b14f9c6e90e0bba9897, type: 3}
-  - {fileID: 2614610302961168961, guid: 68fe61c87efd6534d90dabace9306a7b, type: 3}
-  - {fileID: 2614610302961168961, guid: 2c2272b1966e7f84eae7bbf9e47186db, type: 3}
   closedRoom: {fileID: 6945619693486567245, guid: ab8c28570eec8e54183fa19ba545f4dd,
     type: 3}
   rooms: []
-  waitTime: 2
+  waitTime: 1
   boss: {fileID: 7041347450333883955, guid: bca4ac0d9738626418ab4442c6110f05, type: 3}
 --- !u!4 &1499831315
 Transform:

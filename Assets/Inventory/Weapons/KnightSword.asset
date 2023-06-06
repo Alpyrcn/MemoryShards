@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a51838f8e3e9f141b76e073d4021522, type: 3}
+  m_Name: KnightSword
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 0}
+  type: 0
+  description: 'A '
+  durability: 9999999
+  baseDamage: 4

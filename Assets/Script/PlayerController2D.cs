@@ -111,6 +111,7 @@ public class PlayerController2D : MonoBehaviour
     public void Attack()
     {
         animator.SetTrigger("IsAttacking");
+        AudioManager.Instance.PlaySFX("SwordSwing");
     }
 
     public WeaponsSO weapon;
