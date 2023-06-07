@@ -6,15 +6,19 @@ public class PlayerInv : MonoBehaviour
 {
 
     public InventorySO inventory;
-    // Start is called before the first frame update
-    void Start()
+
+    public void OnTriggerEnter2D(Collider2D other)
     {
-        
+        var item = other.GetComponent<Item>();
+        if (item)
+        {
+            inventory.AddItem(item.item, 1);
+            Destroy(other.gameObject);
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnApplicationQuit()
     {
-        
+        inventory.Container.Clear();
     }
 }

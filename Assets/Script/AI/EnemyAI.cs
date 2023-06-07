@@ -6,6 +6,7 @@ public class EnemyAI : MonoBehaviour
 {
     public EnemyData enemyData;
 
+
     public float checkRadius;
     public float attackRadius;
     public bool shouldRotate;
@@ -29,7 +30,6 @@ public class EnemyAI : MonoBehaviour
         target = GameObject.FindWithTag("Player").transform;
         gameObject.tag = "Enemy";
 
-        // HealthSystem sýnýfýndan yeni bir instance oluþturarak düþmanýn saðlýðýný set ediyoruz.
         playerHealth = FindObjectOfType<PlayerHealth>();
         healthSystem = new HealthSystem(enemyData.health);
     }
@@ -44,7 +44,6 @@ public class EnemyAI : MonoBehaviour
         dir.Normalize();
         movement = dir;
 
-        // Düþmanýn saðlýðý %0'a düþtüðünde, Die() metodu çaðrýlýr.
         if (healthSystem.GetHealth() <= 0)
         {
             Die();

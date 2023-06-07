@@ -26,6 +26,8 @@ public class PlayerHealth : MonoBehaviour
 
         if (currentHealth <= 0)
         {
+           
+
             Die();
         }
     }
@@ -34,11 +36,8 @@ public class PlayerHealth : MonoBehaviour
 
     private void Die()
     {
-        AudioManager.Instance.PlaySFX("Death");
 
-
-        // Ölüm iþlemleri burada gerçekleþtirilir.
-        // Örneðin, oyunu yeniden baþlatabilir veya oyunu durdurabilirsiniz.
+        anim.SetTrigger("IsDeath");
 
 
     }
