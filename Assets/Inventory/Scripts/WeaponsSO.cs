@@ -25,11 +25,6 @@ public class WeaponsSO : ItemObject
         }
     }
 
-    public void DealDamage(EnemyData enemy)
-    {
-        enemy.TakeDamage(baseDamage);
-        DecreaseDurability(1.0f);
-    }
 
     private void Break()
     {

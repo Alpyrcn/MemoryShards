@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1395e97858e0c3c4dbddad1987d19024, type: 3}
   m_Name: SpookyScarySkeleton
   m_EditorClassIdentifier: 
-  health: 15
+  health: 12
   speed: 2
   damage: 2

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class RoomPrefabs : MonoBehaviour
 {
+    public GameObject largeRoom;
     public GameObject[] bottomRooms;
     public GameObject[] topRooms;
     public GameObject[] leftRooms;
@@ -11,6 +12,8 @@ public class RoomPrefabs : MonoBehaviour
     public GameObject[] EntryRooms;
 
     public GameObject closedRoom;
+
+    public GameObject[] Painting;
 
     public List<GameObject> rooms;
 

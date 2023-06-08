@@ -7,7 +7,6 @@ public class PlayerHealth : MonoBehaviour
 
     private Animator anim;
 
-    [SerializeField] private AudioSource deathSound;
     public int GetCurrentHealth()
     {
         return currentHealth;
@@ -16,12 +15,14 @@ public class PlayerHealth : MonoBehaviour
     private void Start()
     {
         currentHealth = maxHealth;
+        anim = GetComponent<Animator>();
     }
 
     public void TakeDamage(int damageAmount)
     {
         currentHealth -= damageAmount;
         currentHealth = Mathf.Max(currentHealth, 0);
+        AudioManager.Instance.PlaySFX("Death");
 
 
         if (currentHealth <= 0)
@@ -36,7 +37,7 @@ public class PlayerHealth : MonoBehaviour
 
     private void Die()
     {
-
+        
         anim.SetTrigger("IsDeath");
 
 

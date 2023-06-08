@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyAI : MonoBehaviour
 {
     public EnemyData enemyData;
-
+    private WeaponsSO weaponSo;
 
     public float checkRadius;
     public float attackRadius;
@@ -24,6 +24,8 @@ public class EnemyAI : MonoBehaviour
     private bool isInChaseRange;
     private bool isInAttackRange;
 
+    private int currentHealth;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -32,6 +34,8 @@ public class EnemyAI : MonoBehaviour
 
         playerHealth = FindObjectOfType<PlayerHealth>();
         healthSystem = new HealthSystem(enemyData.health);
+        currentHealth = enemyData.health;
+
     }
 
     void Update()
@@ -56,6 +60,7 @@ public class EnemyAI : MonoBehaviour
         if (isInChaseRange && !isInAttackRange)
         {
             MoveCharacter(movement);
+            
         }
         if (isInAttackRange)
         {
@@ -67,6 +72,7 @@ public class EnemyAI : MonoBehaviour
     private void MoveCharacter(Vector2 dir)
     {
         rb.MovePosition((Vector2)transform.position + (dir * enemyData.speed * Time.deltaTime));
+        
 
         
     }
@@ -86,10 +92,25 @@ public class EnemyAI : MonoBehaviour
             playerHealth.TakeDamage(enemyData.damage);
         }
     }
+
+    public void TakeDamage(WeaponsSO weapons)
+    {
+        int effectiveDamage = weapons.baseDamage - enemyData.health;
+
+        currentHealth -= effectiveDamage;
+
+        
+        AudioManager.Instance.PlaySFX("SkellyHurt");
+
+        if (currentHealth <= 0)
+        {
+            Die();
+        }
+    }
     private void Die()
     {
-        // Ölüm iþlemleri burada gerçekleþtirilir.
-        // Örneðin, animasyon oynatýlabilir veya ses çalýnabilir.
+        
+        anim.SetBool("Death", true);
         // Düþman nesnesi deðiþtirilebilir veya yok edilebilir.
 
         Destroy(gameObject); // Düþman nesnesini yok etme örneði

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a51838f8e3e9f141b76e073d4021522, type: 3}
   m_Name: KnightSword
   m_EditorClassIdentifier: 
-  prefab: {fileID: 0}
+  prefab: {fileID: 1453574016813206995, guid: dee913c01ffbb54428a626f35995ce36, type: 3}
   type: 0
   description: 'A '
   durability: 9999999
