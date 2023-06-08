@@ -19,6 +19,7 @@ public class RoomPrefabs : MonoBehaviour
 
     public float waitTime;
     private bool spawnedBoss;
+    private bool largeroomspawn;
     public GameObject boss;
 
     void Update()
@@ -37,6 +38,7 @@ public class RoomPrefabs : MonoBehaviour
         } else {
             waitTime -= Time.deltaTime;
         }
+
     }
 
 }
