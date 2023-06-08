@@ -124,7 +124,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 3753488459175551079}
   m_Father: {fileID: 2614610303073862404}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6758,6 +6759,108 @@ Grid:
   m_CellGap: {x: 0, y: 0, z: 0}
   m_CellLayout: 0
   m_CellSwizzle: 0
+--- !u!1001 &5986064767257175
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 2614610302523160869}
+    m_Modifications:
+    - target: {fileID: 3747651945706416688, guid: ac8d6c2c94402ec41b40e47af32d6f54,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3747651945706416688, guid: ac8d6c2c94402ec41b40e47af32d6f54,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 8.200001
+      objectReference: {fileID: 0}
+    - target: {fileID: 3747651945706416688, guid: ac8d6c2c94402ec41b40e47af32d6f54,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 23
+      objectReference: {fileID: 0}
+    - target: {fileID: 3747651945706416688, guid: ac8d6c2c94402ec41b40e47af32d6f54,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3747651945706416688, guid: ac8d6c2c94402ec41b40e47af32d6f54,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3747651945706416688, guid: ac8d6c2c94402ec41b40e47af32d6f54,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3747651945706416688, guid: ac8d6c2c94402ec41b40e47af32d6f54,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3747651945706416688, guid: ac8d6c2c94402ec41b40e47af32d6f54,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3747651945706416688, guid: ac8d6c2c94402ec41b40e47af32d6f54,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3747651945706416688, guid: ac8d6c2c94402ec41b40e47af32d6f54,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3747651945706416688, guid: ac8d6c2c94402ec41b40e47af32d6f54,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7565063110568755878, guid: ac8d6c2c94402ec41b40e47af32d6f54,
+        type: 3}
+      propertyPath: m_Name
+      value: WoodenDoor_0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ac8d6c2c94402ec41b40e47af32d6f54, type: 3}
+--- !u!4 &3753488459175551079 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3747651945706416688, guid: ac8d6c2c94402ec41b40e47af32d6f54,
+    type: 3}
+  m_PrefabInstance: {fileID: 5986064767257175}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7559789615235909873 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7565063110568755878, guid: ac8d6c2c94402ec41b40e47af32d6f54,
+    type: 3}
+  m_PrefabInstance: {fileID: 5986064767257175}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1906191352350215724
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7559789615235909873}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &700268597896756136
 PrefabInstance:
   m_ObjectHideFlags: 0
