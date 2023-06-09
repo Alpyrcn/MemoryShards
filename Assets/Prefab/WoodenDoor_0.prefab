@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4131786975984755235}
   - component: {fileID: 2999512480908769243}
   - component: {fileID: -5339203482733120130}
+  - component: {fileID: 1906191352350215724}
   m_Layer: 0
   m_Name: WoodenDoor_0
   m_TagString: Untagged
@@ -124,3 +125,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bdcbc3af4a02d914a82ac1a7e0d49ebd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &1906191352350215724
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7565063110568755878}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6de7238e086926c4e9c6fa0a06a7161f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

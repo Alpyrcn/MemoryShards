@@ -6,8 +6,18 @@ public class DoorOpen : MonoBehaviour
 {
     private Animator Dooranim;
 
+
+    private void Start()
+    {
+        Dooranim = GetComponent<Animator>();
+    }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Dooranim.SetTrigger("Open");
+        if(other.tag == "Player")
+        {
+            Dooranim.SetBool("Open", true);
+            AudioManager.Instance.PlaySFX("DoorSlam");
+        }
+        
     }
 }

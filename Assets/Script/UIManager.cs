@@ -5,10 +5,13 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
+    public PlayerHealth playerHealth;
+
     private bool isPanelOpen = false;
 
     public Slider _musicslider, _sfxslider;
     public GameObject panel;
+    public GameObject youdied;
 
     public void MusicVolume()
     {
@@ -33,6 +36,13 @@ public class UIManager : MonoBehaviour
                 OpenPanel();
             }
         }
+
+        /*if (playerHealth.maxHealth <= 0)
+        {
+            youdied.SetActive(true);
+            isPanelOpen = true;
+        }
+        */
     }
 
     public void OpenPanel()

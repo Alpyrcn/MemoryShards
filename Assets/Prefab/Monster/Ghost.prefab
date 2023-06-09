@@ -12,9 +12,11 @@ GameObject:
   - component: {fileID: 7041347450333883953}
   - component: {fileID: 7041347450333883954}
   - component: {fileID: 1894890853380282788}
-  m_Layer: 0
+  - component: {fileID: -3695625579786159599}
+  - component: {fileID: -436673680977325609}
+  m_Layer: 3
   m_Name: Ghost
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -117,7 +119,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.17285371, y: -0.72022325}
@@ -133,3 +135,44 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.4042926, y: 0.9970535}
   m_EdgeRadius: 0
+--- !u!114 &-3695625579786159599
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7041347450333883955}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7633f5a8958923742adbaf67c7bba1a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyData: {fileID: 11400000, guid: c0f106c7310ef9643bdb0247e2676a5a, type: 2}
+  checkRadius: 15
+  attackRadius: 0.5
+  shouldRotate: 0
+  Weapon: {fileID: 0}
+  whatIsPlayer:
+    serializedVersion: 2
+    m_Bits: 64
+--- !u!50 &-436673680977325609
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7041347450333883955}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

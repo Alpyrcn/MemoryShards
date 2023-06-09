@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class WeaponController : MonoBehaviour
 {
-    public WeaponsSO weaponData;
+   /* public WeaponsSO weaponData;
+    public EnemyData enemy;
     public Collider2D weaponCollider;
 
     private void Start()
@@ -26,15 +27,16 @@ public class WeaponController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Enemy"))
+        EnemyAI enemy = other.GetComponent<EnemyAI>(); // Diðer collider'ýn baðlý olduðu EnemyAI bileþenini al
+
+        if (enemy != null) // Eðer enemy deðiþkeni null deðilse, yani EnemyAI bileþenini aldýysa
         {
-            EnemyAI enemy = other.GetComponent<EnemyAI>();
-            enemy.TakeDamage(weaponData);
+            enemy.TakeDamage(weaponData); 
         }
     }
 
     private void DisableCollider()
     {
-        weaponCollider.enabled = false;
-    }
+        
+    } */
 }

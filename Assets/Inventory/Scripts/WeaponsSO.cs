@@ -7,9 +7,11 @@ using UnityEngine;
 
 public class WeaponsSO : ItemObject
 {
+
+    public EnemyData enemyData;
     public float durability;
     public int baseDamage;
-
+    public Collider weaponCollider;
     public void Awake()
     {
         type = ItemType.Weapons;
@@ -29,5 +31,12 @@ public class WeaponsSO : ItemObject
     private void Break()
     {
         
+    }
+
+    public void Damage(EnemyData enemyData)
+    {
+        int effectiveDamage = baseDamage - enemyData.health;
+
+        enemyData.health -= effectiveDamage;
     }
 }

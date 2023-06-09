@@ -10,6 +10,8 @@ public class EnemyAI : MonoBehaviour
     public float checkRadius;
     public float attackRadius;
     public bool shouldRotate;
+
+    public GameObject Weapon;
     public LayerMask whatIsPlayer;
 
     private PlayerHealth playerHealth;
@@ -33,7 +35,7 @@ public class EnemyAI : MonoBehaviour
         gameObject.tag = "Enemy";
 
         playerHealth = FindObjectOfType<PlayerHealth>();
-        healthSystem = new HealthSystem(enemyData.health);
+        
         currentHealth = enemyData.health;
 
     }
@@ -48,10 +50,8 @@ public class EnemyAI : MonoBehaviour
         dir.Normalize();
         movement = dir;
 
-        if (healthSystem.GetHealth() <= 0)
-        {
-            Die();
-        }
+       
+
     }
 
 
@@ -72,9 +72,6 @@ public class EnemyAI : MonoBehaviour
     private void MoveCharacter(Vector2 dir)
     {
         rb.MovePosition((Vector2)transform.position + (dir * enemyData.speed * Time.deltaTime));
-        
-
-        
     }
 
 
@@ -82,37 +79,42 @@ public class EnemyAI : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
+            
             Attack();
+
         }
     }
     public void Attack()
     {
         if (playerHealth != null)
         {
-            playerHealth.TakeDamage(enemyData.damage);
+            playerHealth._TakeDamage(enemyData.damage);
         }
     }
 
-    public void TakeDamage(WeaponsSO weapons)
+
+    public void TakeDamage(int damage)
     {
-        int effectiveDamage = weapons.baseDamage - enemyData.health;
-
-        currentHealth -= effectiveDamage;
-
+        currentHealth -= damage; 
         
         AudioManager.Instance.PlaySFX("SkellyHurt");
 
         if (currentHealth <= 0)
         {
             Die();
+            
         }
+
     }
     private void Die()
     {
-        
-        anim.SetBool("Death", true);
-        // Düþman nesnesi deðiþtirilebilir veya yok edilebilir.
+        Debug.Log("Skelly Died :(");
+        //anim.SetInteger("Death", 1);
 
-        Destroy(gameObject); // Düþman nesnesini yok etme örneði
+        
+
+        GetComponent<SpriteRenderer>().enabled = false;
+        GetComponent<Collider2D>().enabled = false;
+        this.enabled = false;
     }
 }

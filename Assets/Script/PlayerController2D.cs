@@ -15,7 +15,7 @@ public class PlayerController2D : MonoBehaviour
     private Vector3 moveDirection;
     
     private float dashDuration = 0.2f;
-    private float dashSpeed = 10f;
+    private float dashSpeed = 20f;
     private float dashCooldown = 2f;
     private float lastDashTime = -10f;
 

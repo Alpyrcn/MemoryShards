@@ -36,7 +36,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 4774160568546504212}
+  - {fileID: 7962631220660199148}
+  - {fileID: 8873139213565533153}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -213,7 +214,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventory: {fileID: 11400000, guid: 0b3a1919a411db943931ec23540415de, type: 2}
---- !u!1 &7154311713284880297
+--- !u!1 &6008340758341428288
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -221,22 +222,21 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4774160568546504212}
-  - component: {fileID: 4522548480634357295}
+  - component: {fileID: 7962631220660199148}
   m_Layer: 6
-  m_Name: Weapon
+  m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4774160568546504212
+--- !u!4 &7962631220660199148
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7154311713284880297}
+  m_GameObject: {fileID: 6008340758341428288}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -245,16 +245,123 @@ Transform:
   m_Father: {fileID: 4492065836842208420}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4522548480634357295
-MonoBehaviour:
+--- !u!1001 &1596239528606115645
+PrefabInstance:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 4492065836842208420}
+    m_Modifications:
+    - target: {fileID: 7855758236302490844, guid: 028caf81e8d08fe49b8ec9eb84da4211,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7855758236302490844, guid: 028caf81e8d08fe49b8ec9eb84da4211,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -17
+      objectReference: {fileID: 0}
+    - target: {fileID: 7855758236302490844, guid: 028caf81e8d08fe49b8ec9eb84da4211,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -23
+      objectReference: {fileID: 0}
+    - target: {fileID: 7855758236302490844, guid: 028caf81e8d08fe49b8ec9eb84da4211,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7855758236302490844, guid: 028caf81e8d08fe49b8ec9eb84da4211,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7855758236302490844, guid: 028caf81e8d08fe49b8ec9eb84da4211,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7855758236302490844, guid: 028caf81e8d08fe49b8ec9eb84da4211,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7855758236302490844, guid: 028caf81e8d08fe49b8ec9eb84da4211,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7855758236302490844, guid: 028caf81e8d08fe49b8ec9eb84da4211,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7855758236302490844, guid: 028caf81e8d08fe49b8ec9eb84da4211,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7855758236302490844, guid: 028caf81e8d08fe49b8ec9eb84da4211,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7855758236302490846, guid: 028caf81e8d08fe49b8ec9eb84da4211,
+        type: 3}
+      propertyPath: m_Name
+      value: Audio Manager
+      objectReference: {fileID: 0}
+    - target: {fileID: 7855758236302490847, guid: 028caf81e8d08fe49b8ec9eb84da4211,
+        type: 3}
+      propertyPath: sfxSound.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7855758236302490847, guid: 028caf81e8d08fe49b8ec9eb84da4211,
+        type: 3}
+      propertyPath: sfxSound.Array.data[1].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: d1402e8a11380fa40a8db9ffb04ec36a, type: 3}
+    - target: {fileID: 7855758236302490847, guid: 028caf81e8d08fe49b8ec9eb84da4211,
+        type: 3}
+      propertyPath: sfxSound.Array.data[2].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: d95c4e30aaaded144bde017bffc56b7f, type: 3}
+    - target: {fileID: 7855758236302490847, guid: 028caf81e8d08fe49b8ec9eb84da4211,
+        type: 3}
+      propertyPath: sfxSound.Array.data[3].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: a3465a72a40c1d94e9424a7ffd974894, type: 3}
+    - target: {fileID: 7855758236302490847, guid: 028caf81e8d08fe49b8ec9eb84da4211,
+        type: 3}
+      propertyPath: sfxSound.Array.data[4].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: a3465a72a40c1d94e9424a7ffd974894, type: 3}
+    - target: {fileID: 7855758236302490847, guid: 028caf81e8d08fe49b8ec9eb84da4211,
+        type: 3}
+      propertyPath: sfxSound.Array.data[1].sfxname
+      value: Dashing
+      objectReference: {fileID: 0}
+    - target: {fileID: 7855758236302490847, guid: 028caf81e8d08fe49b8ec9eb84da4211,
+        type: 3}
+      propertyPath: sfxSound.Array.data[2].sfxname
+      value: SwordSwing
+      objectReference: {fileID: 0}
+    - target: {fileID: 7855758236302490847, guid: 028caf81e8d08fe49b8ec9eb84da4211,
+        type: 3}
+      propertyPath: sfxSound.Array.data[3].sfxname
+      value: SkellyHurt
+      objectReference: {fileID: 0}
+    - target: {fileID: 7855758236302490847, guid: 028caf81e8d08fe49b8ec9eb84da4211,
+        type: 3}
+      propertyPath: sfxSound.Array.data[4].sfxname
+      value: SkellyDeath
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 028caf81e8d08fe49b8ec9eb84da4211, type: 3}
+--- !u!4 &8873139213565533153 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7855758236302490844, guid: 028caf81e8d08fe49b8ec9eb84da4211,
+    type: 3}
+  m_PrefabInstance: {fileID: 1596239528606115645}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7154311713284880297}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 671c74605083c9c439942546bc30e8c8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  weaponData: {fileID: 0}

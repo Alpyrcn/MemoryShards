@@ -18,7 +18,7 @@ public class PlayerHealth : MonoBehaviour
         anim = GetComponent<Animator>();
     }
 
-    public void TakeDamage(int damageAmount)
+    public void _TakeDamage(int damageAmount)
     {
         currentHealth -= damageAmount;
         currentHealth = Mathf.Max(currentHealth, 0);
@@ -47,7 +47,7 @@ public class PlayerHealth : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            TakeDamage(5);
+            _TakeDamage(5);
         }
 
     }
